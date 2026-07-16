@@ -157,7 +157,10 @@ function loadProduct(){
     }
 
     let product = products[name];
-
+document.getElementById("productName").innerHTML = name;
+document.getElementById("productPrice").innerHTML = product.price;
+document.getElementById("productDescription").innerHTML = product.description;
+document.getElementById("productImage").src = "../assets/img/" + product.image;
     if(product == null){
         return;
     }
@@ -245,3 +248,12 @@ function sendContact(){
     return false;
 
 } 
+window.onload = function(){
+
+    if(document.getElementById("productName")){
+
+        loadProduct();
+
+    }
+
+}
